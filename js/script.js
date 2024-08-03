@@ -17,7 +17,7 @@ function formValidation() {
 let indexSlide = 1;
 showSlide(1);
 
-function nextslide() {
+function nextslide(n) {
   showSlide((indexSlide += n));
 }
 
@@ -25,14 +25,17 @@ function showSlide(n) {
   let listImage = document.getElementsByClassName('main-content-banner');
   console.log(listImage);
 
+  //Algoritma mengembalikan nilai index (cycle)
   if (n > listImage.length) indexSlide = 1;
 
+  //Algoritma menghilangkan semua gambar
   let index = 0;
   while (index < listImage.length) {
     listImage[index].style.display = 'none';
     index++;
   }
 
+  //Algoritma untuk memunculkan 1 gambar saja
   listImage[indexSlide - 1].style.display = 'block';
 }
 
